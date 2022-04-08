@@ -1,64 +1,39 @@
 Q1 Have you ever created the kubernetes cluster by yourself, tell me the steps?
 Q2 Explain kubernetes architecture and various components of a kubernetes control plane.
 Q3 How are endusers authenticated and authorised in kubernetes cluster, Different ways with which users can be authenticated ?
-Q4 What is a headless service, where will you use it?
-Q5 What are readiness and liveness probes?
-What are different pod status:- pending, Running , succeeded failed ,unknown
-What is a pod
-
-How is the networking handled in kubernetes., How does the pods gets ip in
-cluster :- pods gets ip in kubernetes cluster using cni , Kubelet will create the
-pod and will run the cni , cni in turn will allocate ip to pod
-How can we restrict a pod to connect to another pod
-What is a headless service, where will you use it
-HPA vs VPA
-What are readiness and liveness probes
-How do you upgrade a kubernetes cluster
-How do you monitor kubernetes cluster
-What is RBAC
-What is ingress
-We have a three tier web application, when user tries to access ui service from
-browser he is not getting any response , what could be the issue? : Service
-might not be able to reach pod due to
-What is the difference between deployment , replica set and statefulsets :
-replica sets are basically use to maintain the replicas of pods, whereas
-deployments are basically used to maintain the application version
-A pod is in pending state , what all can be possible reasons.:- no nodes
-available to schedule the pod
-Difference between helm and operator , which one to use when:- these are no
-alternative of each other , they complement each other
-What are crds
-What are init containers
-What are adapter containers
-Why to define resource quota for each namespace
-What are types of volumes you have used in kubernetes
-How to make a container accept request from a specific ip or a container. :- use
-network policies
-What is pod disruption budget , when to use it
-What are the major differences between helm 2 and helm3
-What are service accounts and when should we use it
-How can you copy files to a running pod:- kubectl cp /tmp/foo <somenamespace>/<
-some-pod>:/tmp/bar
-What is the purpose of static pod
-What are daemonsets , in which scenario would you use it
-How to run a three tier application in kubernetes , what all kubernetes objects
-will you create for the app.
-What are canary deployment , Bluegreen deployment and rolling update in
-kubernetes
-Lets say If I want to roll out a new version of an application service and wanted
-it to be available just for test engineers and old version should be available for
-all other users , How will you go about it :- use canary deployment with istio For
-specific user pass some specific header and based on that route the traffic
-from isito to new version.
-How to get kubernetes deployment status in ci cd jenkins pipeline (to know if
-the deployment was successful) use this kubectl rollout status deployment
-deployment_name --watch --timeout=5m
-How to make a service stop sending request to a pod out of 5 replicas to test
-the new pod configuration :- service sends traffic to pods based on selector
-label so change the label of a particular pod so that service will stop sending
-traffic to that particular pod
-What is startup probe?
-What are various prometheus metrics types:- counter, gauge, histogram ,summary
-How to leave any manifest file in helm upgrade however in helm install that file should be used
-What is helper.tpl file in helm
-What is the templating engine used in helm charts:- jinja 2 templating engine
+Q4 How to run a three tier application in kubernetes , what all kubernetes objects will you create for the app.
+Q5 What are service accounts and when should we use it
+Q6 What is a pod
+Q7 What are readiness and liveness probes?
+Q8 What are different pod status:- pending, Running , succeeded failed ,unknown
+Q9 A pod is in pending state , what all can be possible reasons.:- no nodes available to schedule the pod
+Q10 How can we restrict a pod to not connect to another pod?
+Q11 How can you copy files to a running pod:- kubectl cp /tmp/foo <somenamespace>/<some-pod>:/tmp/bar
+Q12 What are crds
+Q13 What are init containers
+Q14 What are adapter containers
+Q15 What is the purpose of static pod
+Q16 Why to define resource quota for each namespace
+Q17 What are daemonsets , in which scenario would you use it
+Q18 What are types of volumes you have used in kubernetes
+Q19 How to make a container accept request from a specific ip or a container. :- use network policies
+Q20 What is pod disruption budget , when to use it
+Q21 What are canary deployment , Bluegreen deployment and rolling update in kubernetes
+Q22 Lets say If I want to roll out a new version of an application service and wanted it to be available just for test engineers and old version should be available for all other users , How will you go about it :- use canary deployment with istio For specific user pass some specific header and based on that route the traffic from isito to new version.
+Q23 How to get kubernetes deployment status in ci cd jenkins pipeline (to know if the deployment was successful) use this kubectl rollout status deployment deployment_name --watch --timeout=5m
+Q24 How to make a service stop sending request to a pod out of 5 replicas to test the new pod configuration :- service sends traffic to pods based on selector label so change the label of a particular pod so that service will stop sending traffic to that particular pod
+Q25 We have a three tier web application, when user tries to access ui service from browser he is not getting any response , what could be the issue? : Service might not be able to reach pod
+Q26 What is the difference between deployment , replica set and statefulsets : replica sets are basically use to maintain the replicas of pods, whereas deployments are basically used to maintain the application version
+Q27 What is startup probe?
+Q28 How is the networking handled in kubernetes, How does the pods gets ip in cluster :- pods gets ip in kubernetes cluster using cni , Kubelet will create the pod and will run the cni, cni in turn will allocate ip to pod
+Q29 What is a headless service, where will you use it?
+Q30 What is ingress
+Q31 What is the difference between HPA & VPA, When to use which.
+Q32 How do you upgrade a kubernetes cluster
+Q33 How do you monitor kubernetes cluster
+Q34 What is RBAC
+Q35 Difference between helm and operator , which one to use when:- these are not alternative of each other , they complement each other
+Q36 What are the major differences between helm 2 and helm3
+Q37 How to leave any manifest file in helm upgrade however in helm install that file should be used
+Q38 What is helper.tpl file in helm
+Q39 What is the templating engine used in helm charts:- jinja 2 templating engine
