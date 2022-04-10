@@ -1,0 +1,27 @@
+
+
+Important Commands:- 
+
+1 terraform init
+2 terraform plan
+3 terraform plan -target=<resource_type>.<resource_name>
+4 terraform apply -target=aws_autoscaling_group.bastion_asg
+5 terraform destroy
+6 terraform graph
+7 terraform validate :- checks syntactical errors in .tf files
+8 terraform output
+9 terraform refresh:- refreshes the state by comparing it with actual resources in aws
+10 terraform show :- shows the tfstate file data
+11 terraform state list:- list all resources in state file
+12 terraform state pull:-
+13 terraform state push:- pushes the local state to remote state
+14 terraform import aws_vpc.myvpc <vpcid> :- imports existing vpc in terraform
+15 terraform workspace list:- list all available workspaces
+16 terraform workspace new dev:- creates a new workspace with name dev
+17 terraform workspace show:- shows the current workspace
+18 terraform workspace select dev:- selects any given workspace
+19 terraform workspace delete dev:- delete dev workspace
+20 terraform plan -varfile=“stage.tfvar”
+21 terraform taint <resource_type>.<resource_name> :- marks the resource as tainted , will destroy and create it again in next cycle
+
+Important Notes:-

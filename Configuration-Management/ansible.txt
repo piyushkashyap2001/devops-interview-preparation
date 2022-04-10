@@ -1,0 +1,62 @@
+Q1 What is ansible , what is it used for , How is it different from other tools such as chef and puppet:- it is push based while other tools are pull based.
+Q2 What are main components of ansible
+Q3 What is the minimum requirement for the ansible to run :- python
+Q4 What is ansible vault?
+Q5 What is inventory, module, facts, variables, tags
+Q6 What is a playbook?
+Q7 What are handlers used for in ansible
+Q8 Name any 5 ansible modules:- copy, ping, yum, command, file, apt, debug
+Q9 What are dynamic inventory in ansible
+Q10 How to handle prompts with ansible playbook
+Q11 Lets say I have playbook need to be run with Root user how would you do this?
+Q12 Difference between copy and fetch module? The fetch module is used when you want to move files from the remote host to the local host (i.e. fetch a file from the remote host). The copy module is used when you want to put files onto the remote host, or you want to copy files to another location on the remote host.
+Q13 Lets say i have 4 machines consider 1 as ansible master other 3 as nodes, what are the basic setup you need to do for ansible cluster?
+Q14 What are ansible roles? why we need ansible roles?
+Q15 Can we have windows machine as ansible master?
+Q16 Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
+Q17 When i need detailed logs on executing ansible playbook what option i need to use?
+Q18 What is ansible.cfg file?
+Q19 What are the modules have you worked on? which module will you use for getting the file from node to master?
+Q20 Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
+Q21 What are the basic requirements of a machine where ansible needs to run :- python should be installed
+Q22 How will you create 50 users of a system using ansible
+Q23 Use ansible to install software on remote machine if it is not already installed, otherwise print that the software is already installed on that machine
+
+
+Important Commands:-
+1 ansible -m ping webservers
+2 ansible-playbook myfirstplaybook.yaml
+3 ansible-playbook myfirstplaybook.yaml -i inventory
+4 ansible-playbook myfirstplaybook.yaml -i inventory —tags=mytag or —skip_tags=mytag :- execute only tasks which have tags value as mytag
+
+
+Important Notes:-
+
+1 Ansible server:- machine where ansible is installed and from which all tasks and playbooks will be ran
+2 Module:- it is a command or set of commands meant to be executed on client side
+3 Task:- A task is a section that consists of a single procedure to be completed
+4 Role:- A way of organising tasks and related files to be later called in a playbook, Ideally one role should manage only one thing
+5 Facts:-Information fetched from client system from the global variables with gather-facts operation. It is way of getting data from nodes for eg:- how much free space is available on node
+6 Inventory:- File containing data about the ansible client servers | two types of inventories:- static and dynamic
+7 Play:- Execution of playbook
+8 Handler:- Handlers are task which runs only when notified , Handlers run after all tasks in a play are completed , Handlers runs once regardless of how many tasks notify it , for eg if you want to restart any service such as httpd once all tasks are over
+9 Notifier:- section attributed to a task which calls a handler if the output is changed
+10 Playbook:- It consists of code in yaml format which describes tasks to be executed
+11 Host:- Nodes, which are automated by ansible
+12 Ansible vault:- to keep sensitive data , it is a secure store
+13 Template :- it is a definition set of parameters for running ansible job. Templates allow you to create new files on the nodes using predefined models based on the Jinja2 templating system.
+14 Tags:- if you have a large playbook it may be useful to run only specific parts of it instead of running the entire playbook you can do it with Ansible tags , Tags can be added at play level , task level , role level
+15 Adhoc commands
+16 Variables
+17 Conditionals:- when
+18 Loops :- use loops to perform multiple similar kind of tasks such as installation of multiple packages | with_items”
+19 Async polling :- when you do not want to maintain a continuous connection between ansible server and nodes because the task is going to take long time so in that case you can use async polling
+20 Strategy :- linear is default strategy where different hosts will wait for each other until first task is completed on both machines , other strategy s free where hosts doesn’t care about each other ignore_errors: true | to handle errors , it will allow you to run next tasks even if there is an error in first task
+21 Use block & rescue to group your tasks so that you need not to write same commands multiple times , this is like try catch block
+22 Register: Ansible register is a way to capture the output from task execution and store it in a variable.
+23 Debug:-Ansible provides a debug module which can be used to print the registered value
+24 local-action:- allows you to run certain tasks locally on the machine that runs Ansible.
+25 The fetch module is used when you want to move files from the remote host to the local host (i.e. fetch a file from the remote host). The copy module is used when you want to put files onto the remote host, or you want to copy files to another location on the remote host.
+26 become_user:- to become any other user , become:- root user
+27 failed_when: use when you want to display custom display message on error
+28 vars_prompt:- use when you want the user to provide input when running the playbook

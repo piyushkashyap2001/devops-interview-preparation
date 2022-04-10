@@ -1,0 +1,49 @@
+
+Important Commands:-
+
+1 git init
+2 git clone
+3 git log —oneline —graph
+4 git add .
+5 git commit -m “added messages”
+6 git commit —amend -m “message”:- changes the commit message of last commit
+7 git status :- shows the difference between working directory, staging index and repo
+8 git diff :- shows the difference between working directory and repository
+9 git diff —staged:- shows the difference between staging index and repository
+10 git diff <sha> :- shows the difference between sha and working directory
+11 git diff <branch1>..<branch2>:- compares branches or sha
+12 git restore —staged index.html :- unstage index.html file after you did git add .
+13 git checkout <filename>:- discard changes in working area
+14 git checkout <sha> :- checkout a specific commit , head will be in detached state , can be used to create another branch for that particular commit
+15 git commit —amend :- to add the left out file in the last commit , use git add <file name> and then git commit —amend —no-edit . The --no-edit flag allow to make amendment to commit without changing commit message.
+16 git reset —soft <sha>:- head will be pointing to the commit which you passed in the command and it reverts/moves the changes to staging area
+17 git reset —mixed <sha>(default):- head will be pointing to the commit which you passed in the command and it reverts/moves the changes to working directory
+18 git reset —hard <sha>:- changes staging index and working directory to match repository, leaves untracked file as it is
+19 git revert :- doesnt modify the history , creates a new commit, should be used when commit has been pushed to remote
+20 git cherry-pick <sha>:- use this when you want to move any commit from one branch to another
+21 git clean -df :- deletes all untracked files and directories
+22 git fetch:- fetches the changes from remote repo
+23 git pull:- git fetch + git merge
+24 git push
+25 git tag
+26 git stash
+27 git show —stat <commitid>:- shows which files has changed in that commit
+28 git show <commit>:- shows content of file which has changed in a particular commit
+29 git checkout <branchname>:- checkout a different branch
+30 git checkout -b <branchname> :- creates and checkout a new branch
+31 git branch -a :- list all branches even remote branches
+32 git branch -m <oldbranchname> <newbranchname>:- change branch name
+33 git branch -d <branchtodelete>:- deletes the branch
+34 git push origin —delete <branchname>:- deletes remote branch
+35 git merge <branchname>:- merges branch to branch which we are currently on
+36 git merge —abort :- to abort merge and get back to previous state
+37 git merge --squash <branchname>:- merges a branch into main branch after squashing all changes on the branch into one commit
+38 git rebase <branchname>
+39 git rebase —abort
+40 git rebase —continue:- to continue rebase once the rebase conflicts has been resolved.
+41 git rebase -i HEAD~10 :- combines multiple commits into one
+42 git stash:- stashes local changes
+43 git stash pop :- removes from stash
+44 git reflog:- can be useful to check history of all activities done on repo
+45 git help
+46 git remote set-url --add --push origin git://original/repo.git :- to add multiple origin to push to , using this we can push to multiple origin simultaneously

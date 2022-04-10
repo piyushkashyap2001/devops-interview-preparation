@@ -1,0 +1,100 @@
+
+
+
+
+
+
+Important Commands:-
+
+1 hostname:- hostname of system
+2 uname -r, cat /proc/version :- list kernel version
+3 cat /proc/cpuinfo:- to identify cpu info
+4 top:- list processes based on the cpu usage & memory utilisation
+5 ps -ef:- list all processes running on my system
+6 kill:- kills the process eg:- kill 2886 or kill -9 2886 , 2886 is process id and -9 is force kill
+7 free -m :- show memory of system
+8 service <servicename> start | stop | status
+9 systemd start <service name>:- to start a service
+10 systemd stop <service name>:- to stop a service
+11 systemd status <service name>:- to check the status of service
+12 systemd enable <service name>:- this would enable systemd to run the service after boot or reboot
+13 systemd restart <servicename>:- manually restart any service
+14 systemd daemon-reload:- reload service if you modified anything
+15 lsblk:- list attached disks
+16 df -h:- show file systems
+17 du -sh <dir name>:- show directory’s content length
+18 useradd:- to create a new user eg: useradd piyush | useradd -G group1 piyush
+19 usermod:- to modify a user eg: usermod -G group1 piyush (adds piyush to group1)
+20 userdel:- to delete a user
+21 passwd:- to add password for a user eg: passwd piyush
+22 groupadd admin: creates an admin group
+23 sudo su - :- to become super user
+24 W:- to find how many users are logged in the system
+25 whoami:- to find out who you are
+26 id:- to find out which group you belong to
+27 su:- to start a new shell as a different user
+28 history :- last executed commands
+29 which mkdir:- tells the location/path of program
+30 which runs when we run mkdir command
+31 man <commandname>
+32 ctrl + R :- to search for last executed commands
+33 pwd:- present working directory
+34 date:- date of your system
+35 ls -la:- list directory and files
+36 touch | nano | cat > file.txt : - to create files
+37 cat file.txt :- contents are displayed sequentially with no line breaks
+38 less file.txt :- display the content of text file one screen at a time
+39 more :- display content page by page
+40 tail:- display last few lines of text file
+41 head:- display first few lines of text in a file
+42 chmod 644 file.txt :- changes file permission ,first digit is for user, second is for user group and third is for everybody else | r=4, w=2, x=1
+43 chown:- changes the user or group ownership of a file or directory eg:- chown <username> <filename> <directoryname>
+44 mkdir dir1:- creates a directory
+45 cd:- change directory
+46 rmdir dir1:- deletes directory
+47 rm -rf dir1 :- deletes non empty directory | rm -rf *:- deletes everything from current directory
+48 rm file.txt:- removes file
+49 cp sourcefile.txt destinationfile.txt :- copy files from one location to another
+50 mv file1.txt file2.txt :- moves and rename the files
+51 find / -name file1 :- find a file within a scope , here the scope is /
+52 sed ’s/<currentword>/<newword>/‘ file.txt:- find and replaces and existing word with new word
+53 wc -l <filename>:- gives the no of lines in a given file
+54 gzip file1.txt:- to zip file
+55 gunzip file1.zip :- to unzip the file
+56 tar -cuf dir1.tar dir1:- zips directory
+57 tar -xuf dir1.tar:- unzip directory
+58 grep:- filter/search data within a file
+59 echo:- output the string on screen
+60 pipe:- pipe the output of one command to another command eg:- cat file.txt | grep version
+61 ping google.com:- tests network connectivity and reliability
+62 traceroute google.com:- show network path between location and remote system
+63 telnet :- it checks if a a particular port is open on remote server eg:- telnet 192.161.0.1 80 , checks if port 80 is open on server
+64 ssh:- it is used for remote login and remote command execution via secure encrypted channel Eg:- ssh -i <key.pem> <username>@serverip
+65 nslookup google.com:- finds the ip address(A record ) and other records such as ns, soa, mx of remote server
+66 dig:- same as nslookup
+67 netstat -tulpn :- lists all open connections/sockets and other network activity on a system (install netstat with sudo apt-get install net-tools)
+68 ifconfig:- show IP address of server
+69 crontab -e:- edit cronjob min|hour|dayOfMonth|month|weekOfDay command Eg:-00 00 15 * * cd downloads && ./mongo.sh Runs a cronjob on 15th date of every month at 12:00am
+70 crontab -l:- list cronjobs
+71 yum install <package name> :- installs the package on linux
+72 yum update <package_name>:- updates the package
+73 yum remove <packagename>:- removes the package
+74 yum search redis
+75 yum list all|kernel :- list all packages, list installed and available packages of kernel
+76 apt-get update:- update
+77 apt-get upgrade:- actually upgrade all the packages to latest versions
+78 apt-get clean:- clean caches from Debian systems
+79 apt-cache search <software name>:- searches for any specific software
+80 apt-get install <software name>:- install softwares as well as related dependencies
+81 apt-cache depends <software name>:- list all dependencies required to run the software
+82 apt-get remove <software name>:- removes the software from system
+83 apt-get purge <software name> :- delete software as well as configuration files associated with software
+84 wget:- download files from internet
+85 Curl:- for http requests from terminal
+86 scp -r -I <key.pem> <user>@serverip:/home/<user>/knowledge . :- copies remote directory to your machine
+87 scp -i <key.pem> -r knowledge <user>@serverip:/home/<user>:- copies local directory to remote machine
+88 awk:- it is a scripting language for manipulating data and generating reports. It can be used to identify text pattern in data.
+89 ln -s file 1 symlink1 :- to create soft link of a file
+90 journalctl -u <service name> :- to see the logs
+
+Important Notes:-

@@ -1,0 +1,57 @@
+Q1 What is docker ? : A docker is a platform or ecosystem around creating and running containers
+Q2 Why use docker ? Docker makes it easy to install software without worrying about the setup and dependencies
+Q3 What is a container : A running process along with a set of hardware resources allocated specifically to that process is known as container
+Q4 How to run a command from within a container :- use docker exec -it <container id> <command>
+Q5 How docker builds an image from docker file
+Q6 What is the difference between Entrypoint and command
+Q7 what is docker-compose
+Q8 How do you ensure that certain files should not be copied while building the docker image using a dockerfile. Use docker ignorefile
+Q9 What happens to data stored in the container, when the container is deleted or removed. What can be done to avoid loosing data.
+Q10 What is the difference between expose and passing port arguments while running the container ?
+Q11 What is the difference between ARG and ENV ?
+Q12 how to list running containers
+Q13 How to list all containers
+Q14 How to list images
+Q15 how to delete images
+Q16 How to stop a container
+Q17 Can we have multiple CMD commands in docker file No we can’t
+Q18 I have dockerfile that accepts arguments, if I supply value as “1” then it should use maven 2.x version for base image and if I supply “2” then it should take maven latest as base image
+Q19 Inside the container I did many changes like creating, modifying and deleting file but I Wanted to check which files has been changed And what action has been taken what is the Command we need to use ? docker diff <container id> to check which files have changed on container
+Q20 Lets say I have 1 GB file that has to be sent to docker daemon, as its 1GB it will take muchtime and network too. By which option while building dockerfile we can send the fileIn better manner?
+Q21 Have you worked on multi-stage dockerfile and why we need that? Yes react.js and nginx example
+Q22 Lets say i have container which is attached with a volume, if container crashes what happens to volume? It will be there
+Q23 can you copy a file form local to runnning container? docker cp <src-path> <container>:<dest-path> To copy a file from the local file system to a container
+Q24 how to run the startup command with a specific user :- use user instruction
+Q25 What is port mapping , why it is required
+Q26 What is the difference between ADD and COPY
+
+
+Important Commands:-
+
+1 docker run hello-world
+2 docker run busybox echo hi there
+3 docker ps :- List all running containers
+4 docker ps —all :- List all containers
+5 docker start -a <containerid>
+6 docker system prune:- remove all unused images and dangling containers
+7 docker logs <container id>
+8 docker stop <container id>
+9 docker kill <container id>
+10 docker exec -it <container id> <command>
+11 docker run -it busybox sh:- to open a shell in the running container
+12 docker build .
+13 docker build -t piyush/redis :latest .
+14 docker build -t node-image . --build-arg ENV=production
+15 docker pull <image name> :- to pull image from remote
+16 docker push
+17 docker cp <src-path> <container>:<destpath> :- To copy a file from the local file system to a container
+18 docker cp <container>:<src-path> <local-destpath> :- To copy a file from the container to the local file system
+19 docker run -p 8080:8080 <image id>
+20 docker-compose up
+21 docker-compose up —build
+22 docker-compose down
+23 docker-compose ps
+24 docker images
+25 docker rmi <image id>
+26 docker inspect <container id>
+27 docker diff <container id> to check which files have changed on container
