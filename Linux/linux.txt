@@ -1,7 +1,25 @@
+Questions:-
 
-
-
-
+Q1 Command to find empty files in a given directory? find /tmp -type f -empty or find /path/to/dest -type d -empty
+Q2 Commands you will use it for configuring ssh connectivity between 2 machines and what files will be present in .ssh folder? authorize_key file will be there which consists public keys
+Q3 How to schedule a shell script in unix machines? Using crontab
+Q4 Command to get load average ? W or top
+Q5 Need to identify ip addresses in log file and count of ip addresses in log file?
+Q6 write a script which accepts file or folder, if its folder delete it else print "this
+is a file"? if [[ -d $PASSED ]]; then
+echo "$PASSED is a directory"
+elif [[ -f $PASSED ]]; then
+echo "$PASSED is a file"
+else
+echo "$PASSED is not valid"
+exit 1
+fi
+Q7 How to check whether particular port is already in use or not? :- use netstat command
+Q8 Logic for checking whether supplied string for a script is palindrome or not? what are all the commands you will use?
+Q9 command to get number of lines in a file? wc -l filename.txt
+Q10 How to get present working folder? pwd
+Q11 How to copy files from local windows machine to cloud based Linux machine? using scp command
+Q12 A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
 
 
 Important Commands:-

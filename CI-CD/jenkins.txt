@@ -1,0 +1,43 @@
+Questions:-
+
+Q1 How does Jenkins authenticates users
+Q2 How to recover forgotten Jenkins admin password scenario
+    To reset the jenkins admin password, You can simply disable the security in the config.xml file.
+    1. If your jenkins is running on the Linux OS, edit the below file. vi /var/lib/jenkins/config.xml file.
+    2. Search for the word <useSecurity>true</useSecurity> and change the word true to false.
+    3. Restart the Jenkins server.  :- service jenkins restart
+    4. Now go to the Jenkins portal again and Jenkins will not ask any credentials this time. You navigate to "Manage Jenkins" to set the administrator password again.
+    5. Enable the security again by changing settings to <useSecurity>true</useSecurity> and restart the Jenkins again.
+Q3 What is an executioner
+    An executor is a process that runs a build/job.You are able to run one job at a time if you have one executor. If you have two executors, you are able to run two jobs in parallel and so forth.
+Q4 How many ways you can interact with Jenkins:- GUI, rest api , cli
+Q5 How to deploy Jenkins in a production environment, Explain all necessary steps to make it a production grade Jenkins (master slave architecture)
+Q6 How to restrict jobs access to users? Role based authorization strategy, Metrics based strategy
+Q7 How does Jenkins master communicate with agents
+Q8 Tell me about some of the plugins of Jenkins which you have used in your project:- Role based authorisation strategy, docker, AnsiColor,AWS Credentials Plugin , git , nodejs , aws ecr , awscli , Sonarqube scanner Nexus artefact uploader, aws lambda plugin , git parameter plugin
+Q9 How to secure Jenkins
+Q10 How to turn off Jenkins Security if the administrative users have locked out of the admin console?
+    There is a folder that contains a file named config.xml. We need to change the settings to false for the security to be disabled when Jenkins is started the next time.
+Q11 How do you take backup in Jenkins :- JENKINS_HOME
+Q12 Can we monitor Jenkins using common Observability tools?
+    Common monitoring platforms like DataDog, Prometheus, JavaMelody & few others - have their corresponding Jenkins plugin, which when configured, sends Metrics to the corresponding Monitoring platform, which can then be observed with the latest tools & technologies. The same can be configured with Alarms & Notifications for immediate attention when something goes wrong.
+Q13 How to run two stages of a pipeline in parallel :- use parallel , move the stages in parallel block which you want to run in parallel
+Q14 What are the types of pipelines in Jenkins:- scripting and declarative , Difference between them ?
+    1 In declarative pipeline we can restart execution from any stage , we cannot do the same in scripting pipeline
+    2 In declarative pipeline has a strict and predefined structure , simple and user friendly , no need to learn groovy whereas scripting pipeline uses groovy and traditional code approach
+    3 Pipeline validation is performed in declarative pipeline I.e. if there is any error in the pipeline it won’t execute the the pipeline whereas in scripting pipeline it will not validate the pipeline before hand.
+Q15 How to schedule jobs: cronjob in job
+Q16 What is a multi branch pipeline?
+Q17 How to set Jenkins build to fail based specific word in console output ?
+Q18 What are active and reactive parameters (Dynamic parameterization) in Jenkins ?
+Q19 How to customize the build number display to something else in Jenkins job page?
+Q20 Can you list few ways by which we can trigger our build in Jenkins? What is the difference between Build Periodically and Poll SCM?
+Q21 You want to create 50 freestyle jobs with same configurations, but only change is job name. how would you achieve it?
+Q22 Have you worked on commit based job in jenkins? what settings you need to do in jenkins and github to setup commit based job?
+Q23 How can you copy job from your local jenkins instance to other local jenkins instance?
+Q24 How to save only last 5 builds of jenkins job?
+Q25 Have you worked on Jenknsfile? can we use docker container as a node in Jenkinsfile? Who will handle docker container creation and deletion? If i am building a maven project always docker container is fresh instance it will try to download dependency from repository, what measures you will take to reduce build time?
+Q26 What is the scope of jenkins credentials:- global & system
+Q27 How can we share information between different build steps or stages in a Jenkins Job?
+Q28 What happens when a Jenkins agent is offline and what is the best practice in that situation?
+    When a job is tied to a specific agent on a specific node, the job can only be run on that agent and no other agents can fulfill the job request. If the target node is offline or all the agents on that particular node are busy building other jobs, then the triggered job has to wait until the node comes online or an agent from that node becomes available to execute the triggered build request. As a result, a triggered job may sometimes wait indefinitely without knowing that the target node is offline. So, it is always the best practice to tie the jobs to a group of nodes & agents, referred to with a 'Label'. Once a job is tied to a Label, instead of a specific node/agent, any of the nodes/agents falling under the label can fulfill a build request, when a job is triggered. This way we can reduce the overall turn-around time of the builds.

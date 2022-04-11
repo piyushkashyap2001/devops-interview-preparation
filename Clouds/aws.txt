@@ -1,0 +1,100 @@
+Questions:-
+
+IAM:-
+Q1 What are different ways to login into aws console. Ans:- using iam credentials, active directory(identity federation )saml, cross account access
+Q2 How saml authentication to aws console works , steps?
+Q3 How to do cross account access in AWS ?
+Q4 What are different types of policies? :- identity based policies , resource based policies
+Q5 How to restrict user from accessing any service in IAM until mfa is enabled?
+Q6 Lets say you are admin of aws account and you want to delegate user creation tasks to some other user x, so any user which x creates should not be able to create new user , should not be able to delete any sensitive s3 bucket or should not be able to access a particular ec2 instance, how can you do that? Ans:- Permission boundaries
+Q7 How to provide service access in one account to user in another account?
+
+S3:-
+Q1 What are the different types of encryption available for S3
+Q2 What is the minimum and maximum size of individual objects that you can store in S3:- The minimum size of individual objects that you can store in S3 is 0 bytes and the maximum bytes that you can store for individual objects is 5TB.
+Q3 How can you secure the access to your S3 bucket? Answer: There are two ways that you can control the access to your S3 buckets, 1)ACL – Access Control List, 2)Bucket polices
+Q4 How do you limit users access to a particular object in the bucket?
+Q5 How can a user/EC2 instance in one account can access s3 bucket in another account?
+
+
+EC2:-
+Q1 What are different pricing models for EC2 instances? 
+Q2 What are the types of checks done by EC2 once it is launched :- system checks and instance checks
+Q3 What are various ec2 instance types :- m5, r5, t3, c5
+Q4 Which are the types of AMI provided by AWS?Answer: Instance Store backed, EBS Backed
+Q5 What is the difference between EBS and EFS, when to use which?
+Q6 What are types of EBS volumes available in AWS?
+Q7 If an instance’s cpu usage goes above 90% , devops team should receive an alert, how can we achieve this. : Use CloudWatch metric alarm and sns to send email , sms notification to end users
+Q8 You accidently stopped an EC2 instance in a VPC with an associated Elastic IP. If you start the instance again, what will be the result?
+Q9 Your organization has four instances for production and another four for testing. You are asked to set up a group of IAM users that can only access the four production instances and not the other four testing instances. How will you achieve this? :-We can achieve this by defining tags on the test and production instances and then adding a condition to the IAM policy that allows access to specific tags.
+Q10 Is it possible to switch from an Instance-backed root volume to an EBSbacked root volume at any time?No, it is not possible.
+Q11 Is it possible to reduce a ebs volume? Answer: no it’s not possible, we can increase it but not reduce them
+Q12 How to convert an unencrypted EBS volume to encrypted EBS volume
+Q13 You lost your EC2 instance’s key pair. How will you connect it now?Ans: Reset the key using EC2Rescue application or using AWS systems manager
+Q14 In which scenario you would need two ips attached to ec2?
+Q15 For spot instances when interruption occurs , we want to stop instance instead of termination , how ?
+Q16 How do you attach a new volume to EC2
+Q17 How do you monitor memory utilisation of EC2 Ans:- By default CloudWatch doesn’t support memory utilisation , install CloudWatch agent on ec2 instance
+Q18 If ec2 reaches 100% cpu utilisation , how can you restart it automatically , Ans:- use CloudWatch alarms and configure ec2 action
+Q19 What is EIP, Where should we use it
+Q20 By default how many Elastic Ip address does AWS Offer? 5
+
+VPC:-
+Q1 Can we use vpc with on premise application yes
+Q2 Difference between vpc transit and vpc peering
+Q3 What is the difference between security groups and network access control list?
+Q4 How many ips are resereved in a subnet :- 5
+Q5 Can you establish a peering connection to a VPC in a different REGION? Ans: yes . Peering Connection are available in both VPC in the same and different region.
+Q6 Can you connect your VPC with a VPC owned by another AWS account? Ans: Yes, Possible. Provided the owner of other VPCs accepts your connection.
+Q7 Can a EC2 instance inside your VPC connect with the EC2 instance belonging to other VPCs?
+Q8 How can you monitor network traffic within a VPC:- using VPC Flow Logs
+Q9 Why do you create subnets?
+Q10 What is nat gateway used for?
+Q11 Does public or private ip of ec2 changes on reboot?
+Q12 How to connect to vpc private resources from your machine :- use openvpn or
+aws client vpn
+
+ALB/NLB:-
+Q1 What are the types of laodbalancer available in AWS, which one to use when
+Q2 When to use sticky sessions in load balancer
+Q3 What is cross zone load balancing?
+Q4 What are target groups in ALB/NLB?
+Q5 What are path patterns used for?
+
+Route 53:-
+Q1 What are the types of routing polices in route53?
+Q2 What is difference between cname and alias records name will point to other domain and will have to do one more round of dns resolution , whereas alias record will automatically resolve to ip using resolvers.
+Q3 What is a hosted zone in route 53: Answer :- A hosted zone is a collection of records for a specific domain
+
+AWS Lambda:-
+Q1 Should we place lambda function in vpc or outside vpc, reason for selecting any one.? If you want to access resources such as rds within vpc from lambda then put lambda in vpc otherwise there is no need to put it in vpc
+Q2 How lambda works?
+Q3 What is cold start in lambda, how to fix it ?
+Q4 What languages does the lambda supports:- node.js, java, python, go
+Q5 What is a dead letter queue in lambda?
+Q6 What is AWS Lambda execution time limit :- 15 minutes
+Q7 What is asynchronous and synchronous lambda invocation?
+Q8 What are layers in aws lambda? If you have a common functionality or dependency that should be shared across multiple lambda functions then that can be done using layers.
+Q9 Can a lambda in one account invoke lambda in another account, how ? Using resource based policy
+Q10 how do you create a lambda will trigger a shell script in ec2 instance?
+
+Other AWS questions:-
+Q1 What are the types of queues in SQS?
+Q2 What is a well architected framework
+Q3 How cognito authentication works
+Q4 What are user pools and identity pools in cognito
+Q5 How to handle multiple aws accounts :- AWS organization
+Q6 How to get alerts on bill :- Set billing alarm on CloudWatch which will trigger if the amount goes high from threshold value , it will post a topic on SNS
+Q7 What are types of sqs queues :- standard queues, fifo queues
+Q8 What are different types of authorisers and security techniques in api gateway :- Iam, user pool identity pool , lambda authoriser , api keys, resource policy
+Q9 How to pass query parameter and path based parameters to lambda from API Gateway :- use mapping
+Q10 How will you design a 3 tier architecture application in aws
+Q11 How will you move a 3 tier architecture application from on premise application to AWS
+Q12 What is your disaster recovery strategy in aws project?
+Q13 How do you recover from db corrupt issue
+Q14 Design a highly available fault tolerant Jenkins server on aws
+Q15 How do you restrict user of a particular geographical region to access the application :- CloudFront
+
+
+Important Notes:-
+IAAS:- EC2, PAAS(infra+ runtime env):- elastic beanstalk, SAAS(chatbot type service which endusers can use )

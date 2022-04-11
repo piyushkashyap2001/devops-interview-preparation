@@ -1,3 +1,29 @@
+Questions:-
+
+Q1 Describe branching strategies you have used in your project?
+Q2 How do you find the list of files that has changed in particular commit
+Q3 How to clone the repo with only last commit
+Q4 In git how do you revert a commit that has already been pushed and made public
+Q5 How you will combine multiple commits into one : - git squash
+Q6 What is the difference between git rebase and get merge
+Q7 How to unstage changes
+Q8 How to revert a commit
+Q9 What is git reset ? Types of reset ?
+Q10 How to delete local branch and remote branch in git ?
+Q11 Difference between git diff and git status ?
+Q12 What are hooks in git?
+Q13 What is git-cherry-pick? why we use it?
+Q14 Let’s say you’re working on new feature in some branch, now your manager says stop working on that and change few other things on old code. Here after changing the old code, I need to work on new code, so I need to place my new changes some place How would handle this scenario?
+Q15 What is a conflict in git? How would you resolve git conflicts?
+Q16 command to list all branches in a repo?
+Q17 Lets say you have changed 5 files a,b,c,d and e in a repo and you did git add ., now all the files are in staging area, now i decided not to commit file d. how would delete it from staging area?
+Q18 What steps will you take so that no dev team members can push their code directly to master branch.
+Q19 How to compare two commits
+Q20 How to compare two branches
+Q21 What is the use of git reflog command
+Q22 How to modify existing commit :- use rebase 
+Q23 What is git mirroring?
+Q24 how to push code to two repo simultaneously use:- git remote set-url --add --push origin git://original/repo.git | git remote
 
 Important Commands:-
 

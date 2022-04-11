@@ -1,4 +1,27 @@
-
+Q1 How to prevent other users to run terraform script simultaneously:- lock state file using DynamoDB
+Q2 Tell me about terraform architecture :-
+Q3 Tell me some terraform commands
+Q4 What is provider in terraform
+Q5 What is provider alias
+Q6 What is backend in terraform
+Q7 What are modules in terraform:- A module in Terraform is a jug for numerous resources that are used jointly | Modules are small, reusable Terraform configurations that let you manage a group of related resources as if they were a single resource.
+Q8 What are the ways to lock Terraform module versions?
+Q9 What is provisioner in terraform
+Q10 What is tfstate file
+Q11 What are templates
+Q12 How will you create multiple same kind instances of ec2 instances using terraform:- using count
+Q13 Suppose you want to create a resource using terraform but that resource is already created manually , how will you handle this scenario
+Q14 You want to create resources in two different aws account using single terraform , how would you do it:- use different providers and add alias in provider
+Q15 Name some built in functions :- file, map
+Q16 What are data sources or lets say you have an ami in aws , how would you fetch the information about the ami in terraform :- using terraform
+Q17 How to recover corrupted terraform state file
+Q18 How to handle failed terraform apply command status as it doesn’t provide automatic roll back
+Q19 What is resource graph in terraform
+Q20 What is terragrunt , how do you achieve DRY principle in terraform
+Q21 What is terraform module registry:- The Terraform Registry is an interactive resource for discovering a wide selection of integrations (providers) and configuration packages (modules) for use with Terraform.
+Q22 Define null resource in Terraform?
+Q23 What steps should be followed for making an object of one module to be available for the other module at a high level?
+Q24 What is a Tainted Resource?:- Tainted resources are those resources that are forced to be destroyed and recreated on the next apply command. When you mark a resource as tainted, nothing changes on infrastructure but the state file is updated with this information(destroy and create). After marking a resource as tainted, terraform plan out will show that the resource will get destroyed and recreated, and when the next apply happens the changes will get implemented.
 
 Important Commands:- 
 
